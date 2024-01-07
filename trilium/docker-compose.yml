@@ -1,0 +1,11 @@
+version: '2.1'
+services:
+  trilium:
+    image: dockerproxy.com/zadam/trilium:0.62-latest
+    restart: unless-stopped
+    environment:
+      - TRILIUM_DATA_DIR=/home/node/trilium-data
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./trilium-data:/home/node/trilium-data
